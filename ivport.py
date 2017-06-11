@@ -131,9 +131,11 @@ class IVPort():
     # capture_sequence and start_recording require "camera_v2=True"
     # standart capture function doesnt require "camera_v2=True"
     def camera_open(self, camera_v2=False, resolution=None, framerate=None, grayscale=False):
-        if self.is_opened: return
+        if self.is_opened: 
+            return
         self.picam = picamera.PiCamera(camera_v2=camera_v2, resolution=resolution, framerate=framerate)
-        if grayscale: self.picam.color_effects = (128, 128)
+        if grayscale: 
+            self.picam.color_effects = (128, 128)
         self.is_opened = True
 
     # picamera capture
